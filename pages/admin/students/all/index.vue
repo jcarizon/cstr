@@ -55,7 +55,7 @@
             id: 'student',
             value: {
               type: 'person',
-              pic: '/_nuxt/public/images/profile-dummy.png',
+              pic: '/images/profile-dummy.png',
               name: 'Georgene Tambiga',
               email: 'phoenix_baker@gmail.com'
             }
@@ -94,7 +94,7 @@
             id: 'student',
             value: {
               type: 'person',
-              pic: '/_nuxt/public/images/profile-dummy.png',
+              pic: '/images/profile-dummy.png',
               name: 'Georgene Tambiga',
               email: 'phoenix_baker@gmail.com'
             }
@@ -133,7 +133,7 @@
             id: 'student',
             value: {
               type: 'person',
-              pic: '/_nuxt/public/images/profile-dummy.png',
+              pic: '/images/profile-dummy.png',
               name: 'Georgene Tambiga',
               email: 'phoenix_baker@gmail.com'
             }
@@ -172,7 +172,7 @@
             id: 'student',
             value: {
               type: 'person',
-              pic: '/_nuxt/public/images/profile-dummy.png',
+              pic: '/images/profile-dummy.png',
               name: 'Georgene Tambiga',
               email: 'phoenix_baker@gmail.com'
             }
@@ -211,7 +211,7 @@
             id: 'student',
             value: {
               type: 'person',
-              pic: '/_nuxt/public/images/profile-dummy.png',
+              pic: '/images/profile-dummy.png',
               name: 'Georgene Tambiga',
               email: 'phoenix_baker@gmail.com'
             }
@@ -250,7 +250,7 @@
             id: 'student',
             value: {
               type: 'person',
-              pic: '/_nuxt/public/images/profile-dummy.png',
+              pic: '/images/profile-dummy.png',
               name: 'Georgene Tambiga',
               email: 'phoenix_baker@gmail.com'
             }
