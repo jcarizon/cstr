@@ -14,9 +14,6 @@
           class="col flex-box gap-md stats-item" 
           v-for="(item, index) in dashboardStats"
         >
-          <NuxtLink to="/admin/students" class="stats-link">
-            <IconsOptions />
-          </NuxtLink>
           <div class="col ungrow">
             <component :is="item.icon" />
           </div>
@@ -24,6 +21,9 @@
             <h2 class="col title title-2">{{ item.count }}</h2>
             <span class="col size-14px">{{ item.item }}</span>
           </div>
+          <NuxtLink to="/admin/students" class="stats-link">
+            <IconsOptions />
+          </NuxtLink>
         </div>
       </div>
       <div class="dashboard-table">

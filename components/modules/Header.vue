@@ -2,7 +2,7 @@
   <header class="header-menu">
     <div class="flex-box gap-sm items-h-center">
       <div class="col ungrow header-buttons">
-        <CommonButton label="" icon="menu" />
+        <CommonButton label="" theme="icon" icon="menu" />
       </div>
       <div class="col header-search">
         <CommonInput is-search-iput placeholder="Search name, email or student no..." />
@@ -70,7 +70,7 @@
             </ul>
           </div>
           <div class="col header-buttons">
-            <CommonButton label="" icon="notification" />
+            <CommonButton label="" theme="icon" icon="notification" />
           </div>
         </div>
       </div>
