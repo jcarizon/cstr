@@ -41,7 +41,7 @@
 
 const activities = [
   {
-    pic: '/_nuxt/public/images/profile-dummy.png',
+    pic: '/images/profile-dummy.png',
     name: 'Georgene Tambiga',
     time: 'Just Now',
     activity: 'Added a file',
@@ -50,7 +50,7 @@ const activities = [
     message: 'Lorem ipsum dolor sit amet consectetur. Amet fermentum fames dui risus rhoncus non ut sed. In risus',
   },
   {
-    pic: '/_nuxt/public/images/profile-dummy.png',
+    pic: '/images/profile-dummy.png',
     name: 'Ryan Gosling',
     time: '1 min ago',
     activity: 'Made an evaluation',
@@ -58,7 +58,7 @@ const activities = [
     message: 'Lorem ipsum dolor sit amet consectetur. Amet fermentum fames dui risus rhoncus non ut sed. In risus',
   },
   {
-    pic: '/_nuxt/public/images/profile-dummy.png',
+    pic: '/images/profile-dummy.png',
     name: 'Georgene Tambiga',
     time: '30 mins ago',
     activity: 'Added a file',
@@ -67,7 +67,7 @@ const activities = [
     message: 'Lorem ipsum dolor sit amet consectetur. Amet fermentum fames dui risus rhoncus non ut sed. In risus',
   },
   {
-    pic: '/_nuxt/public/images/profile-dummy.png',
+    pic: '/images/profile-dummy.png',
     name: 'Ryan Gosling',
     time: '1 hour ago',
     activity: 'Made an evaluation',
@@ -75,7 +75,7 @@ const activities = [
     message: 'Lorem ipsum dolor sit amet consectetur. Amet fermentum fames dui risus rhoncus non ut sed. In risus',
   },
   {
-    pic: '/_nuxt/public/images/profile-dummy.png',
+    pic: '/images/profile-dummy.png',
     name: 'Ryan Gosling',
     time: '2 hours ago',
     activity: 'Made an evaluation',
