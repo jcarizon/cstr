@@ -1,0 +1,33 @@
+.flex-box {
+  display: flex;
+  &.gap {
+    &-sm {
+      gap: .5em;
+    }
+    &-md {
+      gap: 1em;
+    }
+    &-lg {
+      gap: 2em;
+    }
+  }
+  &.dir-column {
+    flex-direction: column;
+  }
+  &.dir-row {
+    flex-direction: row;
+  }
+  &.items-h-center {
+    align-items: center;
+  }
+  &.items-v-center {
+    justify-content : center;
+  }
+  
+  .col {
+    flex-grow: 1;
+    &.ungrow {
+      flex-grow: 0;
+    }
+  }
+}

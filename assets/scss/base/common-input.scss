@@ -1,0 +1,37 @@
+@import './variables.scss';
+
+.common-input {
+  width: 100%;
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
+}
+
+.input--label {
+  line-height: 20px;
+  margin-bottom: 5px;
+}
+
+.input--text {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid $input-border-color;
+  border-radius: $border-radius;
+}
+
+.search-form {
+  position: relative;
+  .search-button {
+    position: absolute;
+    padding: 0 10px;
+    left: -5px;
+    top: 50%;
+    transform: translateY(-50%);
+    .common-button {
+      border: none;
+    }
+  }
+  .input--text {
+    padding-left: 50px;
+  }
+}

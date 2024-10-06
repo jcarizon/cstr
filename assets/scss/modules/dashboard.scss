@@ -1,0 +1,86 @@
+@import '../base/variables.scss';
+
+.dashboard {
+  padding: 0 !important;
+}
+
+.dashboard-content {
+  padding: 40px 30px;
+  align-items: flex-start;
+}
+
+.dashboard-select-wrapper {
+  flex-basis: 320px
+}
+
+.admin-title-container {
+  .title-1 {
+    margin-bottom: 0;
+  }
+}
+
+.dashboard-recents {
+  flex-basis: 380px;
+  padding: 30px;
+  border-left: 1px solid $border-color;
+  height: calc(100vh - 80px);
+  overflow: auto;
+  .title {
+    margin-bottom: 0;
+  }
+  .anchor {
+    margin-left: auto;
+  }
+  .activity-item {
+    padding-top: 20px;
+    position: relative;
+    &::before {
+      content: '';
+      width: 1px;
+      border-right: 2px solid $border-color;
+      height: 100%;
+      position: absolute;
+      top: 20;
+      left: 22px
+    }
+  }
+  .act-details {
+    padding-top: 5px;
+    flex-basis: 270px;
+  }
+  .act-pic {
+    position: relative;
+    flex-basis: 48px;
+  }
+  .act-item-head {
+    padding: 3px 0;
+  }
+  .act-message {
+    padding: 10px 0;
+  }
+}
+
+.stats-item {
+  border: 1px solid $border-color;
+  border-radius: 8px;
+  padding: 10px;
+  flex-basis: calc(100% / 4);
+}
+
+.dashboard-stats {
+  margin: 0 0 30px;
+}
+
+.dashboard-table {
+  padding: 20px 0 0;
+  border: 1px solid $border-color;
+  border-radius: 8px;
+  overflow: hidden;
+  .common-table {
+    margin-top: 20px;
+  }
+}
+
+.dashboard-table-title {
+  padding: 0 20px;
+}

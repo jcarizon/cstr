@@ -1,0 +1,50 @@
+@import '../base/variables.scss';
+
+.header-menu {
+  border-bottom: 1px solid $border-color;
+  padding: 15px 30px;
+  width: calc(100% - 280px);
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.header-search {
+  max-width: 370px;
+  width: 100%;
+}
+
+.header-buttons {
+  .common-button {
+    background: none;
+    border: none;
+  }
+  .button-icon {
+    padding: 12px;
+  }
+}
+
+.header-right {
+  margin-left: auto;
+}
+
+.header-add-button {
+  position: relative;
+}
+
+.header-dropdown {
+  border: 1px solid $border-color;
+  position: absolute;
+  z-index: 1;
+  top: 100%;
+  right: 0;
+  background: #ffffff;
+  padding: 15px;
+  width: 220px;
+  border-radius: $border-radius;
+}
+
+.header-drop-item {
+  text-align: left;
+  cursor: pointer;
+}

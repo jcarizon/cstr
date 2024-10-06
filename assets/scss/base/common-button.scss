@@ -1,0 +1,40 @@
+@import './variables.scss';
+
+.common-button {
+  position: relative;
+  display: inline-block;
+  border-radius: $border-radius;
+  cursor: pointer;
+  &.primary {
+    background: $color-primary;
+    border: 1px solid $color-primary;
+    .button {
+      color: #ffffff;
+    }
+  }
+  &.bordered {
+    color: $color-primary;
+    background: #ffffff;
+    border: 1px solid $color-primary;
+    .button {
+      color: $color-primary;
+    }
+  }
+  &.icon {
+    border: none;
+    background: none;
+    padding: 0 5px;
+  }
+  .button {
+    font-size: 16px;
+    font-weight: 600;
+    padding: 14px 14px 14px 0;
+    &.has-icon {
+      padding-left: 14px;
+    }
+  }
+}
+
+.button-icon {
+  padding: 0 13px;
+}

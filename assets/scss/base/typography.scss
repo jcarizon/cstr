@@ -1,0 +1,33 @@
+.title {
+  font-weight: 600;
+  &-1 {
+    font-size: 32px;
+    line-height: 42px;
+  }
+  
+  &-2 {
+    font-size: 24px;
+    line-height: 30px;
+  }
+  
+  &-3 {
+    font-size: 20px;
+    line-height: 30px;
+  }
+}
+
+// font weight
+$weights: 100, 200, 300, 400, 500, 600, 700, 800, 900;
+
+@each $weight in $weights {
+  .weight-#{$weight} {
+    font-weight: $weight;
+  }
+}
+
+// font sizes
+@for $i from 1 through 100 {
+  .size-#{$i}px {
+    font-size: $i + px;
+  }
+}

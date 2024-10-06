@@ -1,0 +1,1 @@
+export type { TInputs } from "./TInputs";

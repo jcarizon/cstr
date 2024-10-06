@@ -1,0 +1,56 @@
+@import '../base/variables.scss';
+
+.table-filter-button {
+  .common-button {
+    border-color: #000000 !important;
+    button {
+      color: #000000 !important;
+    }
+    .button-icon {
+      height: 20px;
+    }
+  }
+}
+
+.table-filter-form {
+  margin-bottom: 30px;
+}
+
+.table-search-input {
+  flex-basis: 400px;
+}
+
+.common-table {
+  table {
+    width: 100%;
+  }
+  td {
+    vertical-align: middle;
+  }
+  thead {
+    background: #F2F4F7;
+    font-weight: 600;
+    td {
+      padding: 11px;
+    }
+  }
+  tbody {
+    td {
+      padding: 11px;
+    }
+    tr {
+      &:not(:last-of-type) {
+        border-bottom: 1px solid $input-border-color;
+      }
+      &:nth-child(even) {
+        background: #F9FAFB;
+      }
+    }
+  }
+}
+
+.table-actions {
+  .button-icon {
+    padding: 0 !important;
+  }
+}
