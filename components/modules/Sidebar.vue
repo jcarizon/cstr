@@ -7,7 +7,7 @@
     <ul class="flex-box dir-column sidebar-items custom-scrollbar">
       <li 
         v-for="(item, index) in siderbarItems" 
-        class="col ungrow" 
+        class="col ungrow sidebar-li" 
         :key="index"
         @click="item.click()"
       >
@@ -112,13 +112,13 @@
           icon: resolveComponent('IconsSubDot'),
           label: 'High School',
           name: 'admin-students-high-school',
-          click: () => navigateTo('/admin/students')
+          click: () => navigateTo('/admin/students/high-school')
         },
         {
           icon: resolveComponent('IconsSubDot'),
           label: 'College',
           name: 'admin-students-college',
-          click: () => navigateTo('/admin/students')
+          click: () => navigateTo('/admin/students/college')
         },
       ],
     },
@@ -126,20 +126,20 @@
       icon: resolveComponent('IconsDepartmentMd'),
       label: 'Departments',
       name: 'admin-departments',
-      click: () => null
+      click: () => navigateTo('/admin/departments')
     },
     {
       icon: resolveComponent('IconsHumanResource'),
       label: 'Human Resource',
       name: 'admin-human-resource',
-      click: () => null,
+      click: () => navigateTo('/admin/human-resource/all'),
       sub: [
         {
           icon: resolveComponent('IconsSubDot'),
           label: 'All',
           name: 'admin-human-resource-all',
           click: () => {
-            navigateTo('/admin/students/all')
+            navigateTo('/admin/human-resource/all')
             isSubClicked.value = true
           }
         },
@@ -147,32 +147,35 @@
           icon: resolveComponent('IconsSubDot'),
           label: 'Faculty',
           name: 'admin-human-resource-faculty',
-          click: () => navigateTo('/admin/students')
+          click: () => navigateTo('/admin/human-resource/faculty')
         },
         {
           icon: resolveComponent('IconsSubDot'),
           label: 'Staff',
-          name: 'admin-human-resource-stagg',
-          click: () => navigateTo('/admin/students')
+          name: 'admin-human-resource-staff',
+          click: () => navigateTo('/admin/human-resource/staff')
         },
       ],
     },
     {
       icon: resolveComponent('IconsStudentDevelopment'),
+      iconActive: resolveComponent('IconsStudentDevelopmentWhite'),
       label: 'Student Development',
-      click: () => null
+      name: 'admin-student-development',
+      click: () => navigateTo('/admin/student-development')
     },
     {
       icon: resolveComponent('IconsAccounting'),
       label: 'Accounting',
-      click: () => null,
+      name: 'admin-accounting',
+      click: () => navigateTo('/admin/accounting/fees'),
       sub: [
         {
           icon: resolveComponent('IconsSubDot'),
           label: 'Fees',
           name: 'admin-accounting-fees',
           click: () => {
-            navigateTo('/admin/students/all')
+            navigateTo('/admin/accounting/fees')
             isSubClicked.value = true
           }
         },
@@ -180,21 +183,22 @@
           icon: resolveComponent('IconsSubDot'),
           label: 'Payments',
           name: 'admin-accounting-payments',
-          click: () => navigateTo('/admin/students')
+          click: () => navigateTo('/admin/accounting/payment')
         }
       ],
     },
     {
       icon: resolveComponent('IconsResources'),
       label: 'Resources',
-      click: () => null,
+      name: 'admin-resources',
+      click: () => navigateTo('/admin/resources/college'),
       sub: [
         {
           icon: resolveComponent('IconsSubDot'),
           label: 'College',
           name: 'admin-resources-college',
           click: () => {
-            navigateTo('/admin/students/all')
+            navigateTo('/admin/resources/college')
             isSubClicked.value = true
           }
         },
@@ -202,20 +206,20 @@
           icon: resolveComponent('IconsSubDot'),
           label: 'Area',
           name: 'admin-resources-area',
-          click: () => navigateTo('/admin/students')
+          click: () => navigateTo('/admin/resources/area')
         },
         {
           icon: resolveComponent('IconsSubDot'),
           label: 'Curriculum Program',
-          name: 'admin-resources-curriculum-program',
-          click: () => navigateTo('/admin/students')
+          name: 'admin-resources-curricular-program',
+          click: () => navigateTo('/admin/resources/curricular-program')
         },
         {
           icon: resolveComponent('IconsSubDot'),
           label: 'Subjects',
           name: 'admin-resources-subjects',
           click: () => {
-            navigateTo('/admin/students/all')
+            navigateTo('/admin/resources/subjects')
             isSubClicked.value = true
           }
         },
@@ -223,20 +227,20 @@
           icon: resolveComponent('IconsSubDot'),
           label: 'Buildings',
           name: 'admin-resources-buildings',
-          click: () => navigateTo('/admin/students')
+          click: () => navigateTo('/admin/resources/buildings')
         },
         {
           icon: resolveComponent('IconsSubDot'),
           label: 'Rooms',
           name: 'admin-resources-rooms',
-          click: () => navigateTo('/admin/students')
+          click: () => navigateTo('/admin/resources/rooms')
         },
         {
           icon: resolveComponent('IconsSubDot'),
           label: 'Term',
-          name: 'admin-account-term',
+          name: 'admin-resources-term',
           click: () => {
-            navigateTo('/admin/students/all')
+            navigateTo('/admin/resources/term')
             isSubClicked.value = true
           }
         },
@@ -244,25 +248,33 @@
           icon: resolveComponent('IconsSubDot'),
           label: 'Nationality',
           name: 'admin-resources-nationality',
-          click: () => navigateTo('/admin/students')
+          click: () => navigateTo('/admin/resources/nationality')
         },
         {
           icon: resolveComponent('IconsSubDot'),
           label: 'Religion',
-          name: 'admin-accounting-religion',
-          click: () => navigateTo('/admin/students')
-        }
+          name: 'admin-resources-religion',
+          click: () => navigateTo('/admin/resources/religion')
+        },
+        {
+          icon: resolveComponent('IconsSubDot'),
+          label: 'Zip Code',
+          name: 'admin-resources-zip-code',
+          click: () => navigateTo('/admin/resources/zip-code')
+        },
       ],
     },
     {
       icon: resolveComponent('IconsEvents'),
       label: 'Events',
-      click: () => null
+      name: 'admin-events',
+      click: () => navigateTo('/admin/events')
     },
     {
       icon: resolveComponent('IconsHolidays'),
       label: 'Holidays',
-      click: () => null
+      name: 'admin-holidays',
+      click: () => navigateTo('/admin/holidays')
     },
     {
       icon: resolveComponent('IconsFiles'),

@@ -4,7 +4,7 @@
   width: 280px;
   border-right: 1px solid $border-color;
   height: 100vh;
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
 }
@@ -25,6 +25,10 @@
   margin-top: 30px;
   height: calc(100% - 188px);
   overflow: auto;
+  .sidebar-li {
+    min-height: 48px;
+    flex-shrink: 0;
+  }
   .item-menu {
     cursor: pointer;
     padding: 12px 10px;

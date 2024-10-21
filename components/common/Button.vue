@@ -1,10 +1,25 @@
 <template>
-  <div :class="['common-button', props.theme]">
-    <div class="flex-box items-h-center">
-      <div v-if="props.icon" class="col ungrow button-icon">
-        <component :is="buttonIcon" />
-      </div>
-      <button v-if="props.label" :class="['col button', props.icon.length ? '' : 'has-icon']" :type="props.type" @click="clickFn($event)">{{props.label}}</button>
+  <div :class="['common-button', props.theme, { 'is-disabled' : props.disabled }]">
+    <div :class="['flex-box items-h-center', { 'pad-left' : !props.iconLeft }]">
+      <template v-if="props.iconLeft">
+        <div v-if="props.icon" class="col ungrow button-icon" @click="handleClick">
+          <component :is="buttonIcon" />
+        </div>
+      </template>
+      <button 
+        v-if="props.label" 
+        :class="['col button', props.icon.length ? '' : 'has-icon']" 
+        :type="props.type" 
+        :disabled="props.disabled"
+        @click="handleClick"
+      >
+        {{props.label}}
+      </button>
+      <template v-if="!props.iconLeft">
+        <div v-if="props.icon" class="col ungrow button-icon" @click="handleClick">
+          <component :is="buttonIcon" />
+        </div>
+      </template>
     </div>
   </div>
 </template>
@@ -28,19 +43,19 @@
       type: String as () => "submit" | "button",
       default: 'button'
     },
-    click: {
-      type: Function,
-    },
     icon: {
       type: String, // icons-${icon name}
       default: ''
+    },
+    iconLeft: {
+      type: Boolean,
+      default: true
+    },
+    disabled: {
+      type: Boolean,
+      default: false
     }
   })
-
-  const clickFn = (event: any) => {
-    event?.preventDefault()
-    props.click
-  }
 
   const buttonIcon = computed(() => {
     switch (props.icon) {
@@ -64,8 +79,22 @@
         return resolveComponent("IconsDelete")
       case 'others':
         return resolveComponent("IconsOthers")
+      case 'arrow-right':
+        return resolveComponent("IconsArrowRight")
+      case 'arrow-left':
+        return resolveComponent("IconsArrowLeft")
       default:
         return ''
     }
   })
+
+  // methods
+  // Define emits
+  const emit = defineEmits(['onClick']);
+
+  // Click handler
+  const handleClick = (event: any) => {
+    event.preventDefault()
+    emit('onClick', event);
+  };
 </script>

@@ -3,7 +3,7 @@
     <div class="col student-all-content">
       <div class="flex-box items-h-center admin-title-container">
         <h1 class="col title title-1">
-          All Students
+          High School
         </h1>
         <div class="col ungrow align-right">
           <div class="flex-box gap-sm items-h-center">

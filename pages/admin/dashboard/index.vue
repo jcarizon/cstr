@@ -31,7 +31,7 @@
           <h3 class="col title title-3">Recent Enrollment</h3>
           <NuxtLink to="/admin/dashboard" class="col ungrow anchor">View All</NuxtLink>
         </div>
-        <CommonTable :has-search-filter="false" :thead="tableData.head" :tbody="tableData.body">
+        <CommonTable :has-search-filter="false" :thead="tableData.head" :tbody="tableData.body" :has-pagination="false">
           <div class="flex-box item-h-center gap-sm">
             <div class="col ungrow">
               <CommonButton label="" theme="icon" icon="edit" />
@@ -93,7 +93,7 @@
     ],
     body: [
       {
-        items: [
+        tdItems: [
           {
             id: 'student-no',
             value: '24-34054'
@@ -132,7 +132,7 @@
         ]
       },
       {
-        items: [
+        tdItems: [
           {
             id: 'student-no',
             value: '24-34054'
@@ -171,7 +171,7 @@
         ]
       },
       {
-        items: [
+        tdItems: [
           {
             id: 'student-no',
             value: '24-34054'
@@ -210,7 +210,7 @@
         ]
       },
       {
-        items: [
+        tdItems: [
           {
             id: 'student-no',
             value: '24-34054'
@@ -249,7 +249,7 @@
         ]
       },
       {
-        items: [
+        tdItems: [
           {
             id: 'student-no',
             value: '24-34054'
@@ -288,7 +288,7 @@
         ]
       },
       {
-        items: [
+        tdItems: [
           {
             id: 'student-no',
             value: '24-34054'

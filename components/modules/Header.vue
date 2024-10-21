@@ -14,7 +14,7 @@
               label="Add New" 
               theme="bordered" 
               icon="plusprimary" 
-              @click="handleDropActive" 
+              @onClick="handleDropActive($event)"
             />
             <ul v-if="headerDropActive" class="flex-box gap-md dir-column header-dropdown">
               <li class="col header-drop-item">
@@ -83,7 +83,13 @@
 
   const headerDropActive = ref(false)
 
-  const handleDropActive = () => {
+  const handleDropActive = (event: any) => {
+    event.preventDefault()
     headerDropActive.value = !headerDropActive.value
+    console.log(headerDropActive.value)
   }
+
+  watch(headerDropActive, value => {
+    return headerDropActive.value
+  }, {deep: true, immediate: true})
 </script>

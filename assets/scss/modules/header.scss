@@ -4,9 +4,11 @@
   border-bottom: 1px solid $border-color;
   padding: 15px 30px;
   width: calc(100% - 280px);
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
+  z-index: 1;
+  background-color: #ffffff;
 }
 
 .header-search {

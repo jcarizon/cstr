@@ -21,11 +21,12 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="(trItem, id) in tbody" :key="id">
-          <td v-for="(item, index) in trItem.items" :key="index">
+        <tr v-for="(trItem, id) in paginatedItems" :key="id">
+          <td v-for="(item, index) in trItem.tdItems" :key="index">
             <template v-if="typeof item.value === 'object'">
+              <!-- if there are other formats for td create another v-else-if below -->
               <template  v-if="item.value.type === 'person'">
-                <div class="flex-box items-h-center">
+                <div class="flex-box gap-sm items-h-center">
                   <img class="col ungrow" :src="item.value.pic" alt="Profile Picture" />
                   <div class="col flex-box dir-column">
                     <div class="col">{{ item.value.name }}</div>
@@ -63,6 +64,14 @@
         </tr>
       </tbody>
     </table>
+    <template v-if="hasPagination">
+      <CommonPagination 
+        :totalItems="props.tbody.length" 
+        :currentPage="currentPage" 
+        :itemsPerPage="props.itemsPerPage" 
+        @page-changed="onPageChanged" 
+      />
+    </template>
   </div>
 </template>
 
@@ -70,6 +79,14 @@
   import '~/assets/scss/base/common-table.scss'
   const props = defineProps({
     hasSearchFilter: {
+      type: Boolean,
+      default: true
+    },
+    itemsPerPage: {
+      type: Number,
+      default: 7
+    },
+    hasPagination: {
       type: Boolean,
       default: true
     },
@@ -84,11 +101,13 @@
     tbody: {
       default: [
         {
-          items: [
+          tdItems: [
+            // format for normal td item
             {
               id: 'head1',
               value: 'This is the head1'
             },
+            // format for person with picture
             {
               id: 'head2',
               value: {
@@ -98,6 +117,7 @@
                 email: 'phoenix_baker@gmail.com'
               }
             },
+            // format for badge
             {
               id: 'head3',
               value: {
@@ -106,37 +126,7 @@
                 theme: 'info' // primary, info, error
               }
             },
-            {
-              id: 'head4',
-              value: {
-                type: 'actions'
-              }
-            }
-          ]
-        },
-        {
-          items: [
-            {
-              id: 'head1',
-              value: 'This is the head1'
-            },
-            {
-              id: 'head2',
-              value: {
-                type: 'person',
-                pic: '/_nuxt/public/images/profile-dummy.png',
-                name: 'Georgene Tambiga',
-                email: 'phoenix_baker@gmail.com'
-              }
-            },
-            {
-              id: 'head3',
-              value: {
-                type: 'badge',
-                text: 'Badge',
-                theme: 'info' // primary, info, error
-              }
-            },
+            // format for actions
             {
               id: 'head4',
               value: {
@@ -148,4 +138,16 @@
       ]
     }
   })
+
+  const currentPage = ref(1);
+
+  const paginatedItems = computed(() => {
+    const start = (currentPage.value - 1) * props.itemsPerPage;
+    const sliced = props.tbody.slice(start, start + props.itemsPerPage);
+    return sliced;
+  });
+
+  const onPageChanged = (page: number) => {
+    currentPage.value = page; // Update the current page when the child component emits the event
+  };
 </script>
